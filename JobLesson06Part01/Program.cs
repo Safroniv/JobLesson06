@@ -32,6 +32,7 @@ namespace JobLesson06Part01
             {
                 Console.WriteLine("Деление на ноль");
             }
+
         }
     }
 }
