@@ -23,6 +23,15 @@ namespace JobLesson06Part01
             {
                 File.WriteAllText("log.txt", log);
             }
+            try
+            {
+                object x = null;
+                int y = (int)x / 0;
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Деление на ноль");
+            }
         }
     }
 }
