@@ -1,0 +1,73 @@
+            Calculate(5, 10, null);
+
+        }
+
+        static int Calculate(int a, int b, object foo)
+        {
+            /*
+             *Арифметические действия
+             *Работа с парсингом (нахождение подстроки в строке
+             *Работа с массивами
+             *Работа с файлима и каталогами (подсистема Input Output )
+             *Работа с БД
+             *работа с сетью
+             */
+
+            //string log = String.Empty;
+            //log +=$"Начало работы приложения";
+            //try
+            //{
+
+
+                    int result = (b / a) + foo.GetHashCode();
+            return result;
+            //    log += $"{Environment.NewLine}Результат деления:{result}";
+            //}
+            //catch(DivideByZeroException divedeByZeroExeption)
+            //{
+            //    log += $"{Environment.NewLine}Во время деления произошла ошибка - divedeByZeroExeption"; 
+            //    Console.WriteLine("You can");
+            //}
+            //catch(NullReferenceException nullReferenceException)
+            //{
+            //    log += $"{Environment.NewLine}Во время деления произошла ошибка - nullReferenceException";
+            //    Console.WriteLine("Null ref");
+            //}
+            //catch(Exception exception)
+            //{
+            //    log += $"{Environment.NewLine}Во время деления произошла ошибка"; 
+            //    Console.WriteLine(exception.Message);
+            //}
+            ////catch
+            ////{
+            ////    log += $"{Environment.NewLine}Во время деления произошла ошибка";
+
+            ////}
+            //finally
+            //{
+            //    File.WriteAllText("log.txt", log);
+            //}
+            //Console.WriteLine("No result!");
+            //return 0;
+                        
+            
+            //if (args.Length>0)
+            //{
+            //    string firstarg = args[0];
+            //    if (firstarg =="start")
+            //    {
+            //        Console.WriteLine("start algo");
+            //        return;
+            //    }
+            //    if (firstarg=="stop")
+            //    {
+            //        Console.WriteLine("stop algo");
+            //        return;
+            //    }
+            //}
+            //return -1;
+        }
+        public class NotValidCalculationArgumentsExeption : Exception
+        {
+
+        }

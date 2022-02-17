@@ -1,38 +1,44 @@
 ﻿using System;
-using System.IO;
+using System.Diagnostics;
 
 namespace JobLesson06Part01
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            string log = string.Empty; // пустая строка - ""
-            log += $"Начало работы приложения";
-            try
+            //Написать консольное приложение Task Manager,
+            //которое выводит на экран запущенные процессы и
+            //позволяет завершить указанный процесс.
+            //Предусмотреть возможность завершения процессов с помощью указания его ID
+            //или имени процесса. 
+            //В качестве примера можно использовать консольные утилиты
+            //Windows tasklist и taskkill.
+
+
+
+
+            Process[] processes = Process.GetProcesses();
+
+            for (int i = 0; i < processes.Length; i++)
             {
-                int x = 10;
-                int y = x / 0;
-                log += $"{Environment.NewLine}Результат деления: {y}";
+                Process current = processes[i];
+                Console.WriteLine($"{current.ProcessName}, ID Процесса:{current.Id}");
             }
-            catch
+            Console.WriteLine("Введите Имя процесса который нужно завершить -");
+            string killProcess = Console.ReadLine();
+            for (int i = 0; i < processes.Length; i++)
             {
-                log += $"{Environment.NewLine}Во время выполнения деления произошла ошибка";
+                Process current = processes[i];
+                if (current.ProcessName == killProcess)
+                {
+                    current.Kill();
+                    Console.WriteLine($"Процесс -{current.ProcessName} был завершен");
+                }
             }
-            finally
-            {
-                File.WriteAllText("log.txt", log);
-            }
-            try
-            {
-                object x = null;
-                int y = (int)x / 0;
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Деление на ноль");
-            }
+            return 0;
 
         }
+
     }
 }
