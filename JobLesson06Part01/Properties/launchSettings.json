@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "JobLesson06Part01": {
+      "commandName": "Project",
+      "commandLineArgs": "start"
+    }
+  }
+}
