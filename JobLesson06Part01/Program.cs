@@ -27,6 +27,8 @@ namespace JobLesson06Part01
             }
             Console.WriteLine("Введите Имя процесса который нужно завершить -");
             string killProcess = Console.ReadLine();
+            Console.WriteLine("Или введите  ID процесса который нужно завершить -");
+            int killIdProcess = Int32.Parse(Console.ReadLine());
             for (int i = 0; i < processes.Length; i++)
             {
                 Process current = processes[i];
@@ -34,6 +36,11 @@ namespace JobLesson06Part01
                 {
                     current.Kill();
                     Console.WriteLine($"Процесс -{current.ProcessName} был завершен");
+                }
+                if (current.Id == killIdProcess)
+                {
+                    current.Kill();
+                    Console.WriteLine($"Процесс -{current.Id} был завершен");
                 }
             }
             return 0;
